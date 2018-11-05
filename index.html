@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<title>Task</title>
+
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/index.css">
+	<link rel="stylesheet" type="text/css" href="assets/home.css">
+</head>
+<body ng-controller="mainCtrl" ng-keydown="keyDown($event)">
+	<header class="focusable" style="text-align: center; font-size: 62px;"> Jio Games </header>
+		<div id="content">
+		    <div ui-view></div>
+		</div>
+	<footer>
+		<div class="row">
+		  <div class="col">Menu</div>
+		  <div class="col" style="text-align: right;">Options</div>
+		</div>
+	</footer>
+
+	<div class="modal" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header">
+	        <h4 class="modal-title" style="font-size: 48px;">Options</h4>
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      <div class="modal-body">
+	        <ul class="list-group" style="font-size: 48px;">
+	        	<li class="list-group-item focusable">favourite</li>
+	        	<li class="list-group-item focusable">leaderboard</li>
+	        </ul>
+	      </div>
+
+	      <!-- Modal footer -->
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger focusable" data-dismiss="modal" style="font-size: 48px;">Close</button>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+</body>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/angular-1.6.5.min.js"></script>
+	<script type="text/javascript" src="lib/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="lib/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="lib/angular-animate.min.js"></script>
+    <script type="text/javascript" src="lib/angular-aria.min.js"></script>
+    <script type="text/javascript" src="lib/angular-messages.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.slim.min.js"></script>
+	<script type="text/javascript" src="lib/jquery.min.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.min.js"></script>
+	<script src="https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="home/home.js"></script>
+	<script type="text/javascript" src="details/details.js"></script>
+	<script type="text/javascript" src="menu/menu.js"></script>
+</html>

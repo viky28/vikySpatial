@@ -1,0 +1,34 @@
+   body {
+        overflow: hidden;
+    }
+    #content {
+        max-height: calc(100% - 120px);
+        overflow-y: scroll;
+        padding: 0px 5% !important;
+        margin-top: 140px !important;
+    }
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+header {
+    width: 100%;
+    height: 100px;
+    background: #7AEDCB;
+    position: fixed;
+    top: 0;
+}
+
+footer {
+    width: 100%;
+    height: 80px;
+    background: #5BBCD0;
+    color: black;
+    font-size: 48px;
+    position: fixed;
+    bottom: 0;
+}
