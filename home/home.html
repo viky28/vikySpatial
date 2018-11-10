@@ -1,7 +1,7 @@
 <div ng-controller="homeCtrl">
 	<!--Carousel Wrapper-->
-	<div class="focusable">
-		<div id="carousel-example-1z" class="row carousel slide carousel-fade" data-ride="carousel">
+	<div>
+		<div id="carousel-example-1z" class="row carousel slide carousel-fade focusable" data-ride="carousel">
 			<!--Indicators-->
 			<ol class="carousel-indicators">
 				<li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
@@ -29,11 +29,11 @@
 			</div>
 			<!--/.Slides-->
 			<!--Controls-->
-			<a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+			<a class="carousel-control-prev" data-target="#carousel-example-1z" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
 			</a>
-			<a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+			<a class="carousel-control-next" data-target="#carousel-example-1z" role="button" data-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
@@ -45,7 +45,7 @@
 	<br>
 	<b style="font-size: 48px;">New Launch</b>
 	<div class="row launch" style="overflow-x: auto;">
-		<div class="col-xs-4 focusable">
+		<div class="col-xs-4 focusable" id="launchItem">
 			<img src="img/one.jpg" style="height: 400px; width: 100%;" ng-show="showFirst">
 		</div>
 		<div class="col-xs-4 focusable">

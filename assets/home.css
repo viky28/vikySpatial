@@ -8,5 +8,6 @@
 }
 
 .focusable:focus {
-  opacity: 0.5;
+  /*opacity: 0.5;*/
+  border: 3px solid black;
 }

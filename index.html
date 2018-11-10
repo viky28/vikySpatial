@@ -9,18 +9,20 @@
 	<link rel="stylesheet" type="text/css" href="assets/home.css">
 </head>
 <body ng-controller="mainCtrl" ng-keydown="keyDown($event)">
-	<header class="focusable" style="text-align: center; font-size: 62px;"> Jio Games </header>
-		<div id="content">
-		    <div ui-view></div>
-		</div>
-	<footer>
-		<div class="row">
-		  <div class="col">Menu</div>
-		  <div class="col" style="text-align: right;">Options</div>
-		</div>
-	</footer>
+	<div>
+		<header id="main" class="focusable" style="text-align: center; font-size: 62px;"> Jio Games </header>
+			<div id="content">
+			    <div ui-view></div>
+			</div>
+		<footer>
+			<div class="row">
+			  <div class="col">Menu</div>
+			  <div class="col" style="text-align: right;">Options</div>
+			</div>
+		</footer>
+	</div>
 
-	<div class="modal" id="myModal">
+	<div class="modal fade" id="myModal" role="dialog">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 
@@ -33,14 +35,14 @@
 	      <!-- Modal body -->
 	      <div class="modal-body">
 	        <ul class="list-group" style="font-size: 48px;">
-	        	<li class="list-group-item focusable">favourite</li>
-	        	<li class="list-group-item focusable">leaderboard</li>
+	        	<li class="list-group-item">favourite</li>
+	        	<li class="list-group-item">leaderboard</li>
 	        </ul>
 	      </div>
 
 	      <!-- Modal footer -->
 	      <div class="modal-footer">
-	        <button type="button" class="btn btn-danger focusable" data-dismiss="modal" style="font-size: 48px;">Close</button>
+	        <button type="button" class="btn btn-danger focusable" id="cancelBtn" data-dismiss="modal" style="font-size: 48px;">Close</button>
 	      </div>
 
 	    </div>

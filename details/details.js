@@ -7,6 +7,7 @@ angular.module('myApp.details', [])
 		if(e.which===8){
 			console.log("go back")
 			$location.path('/')
+			SpatialNavigation.clear()
 		}
 	}
 }])

@@ -16,6 +16,7 @@ angular.module('myApp.home', [])
 	$scope.goToDetails = function(e){
 		console.log("details")
 		$location.path('/details')
+		SpatialNavigation.clear()
 	}
 }])
 .directive('ngEnter', function () {
@@ -36,10 +37,29 @@ angular.module('myApp.home', [])
 		SpatialNavigation.init();
 
 		SpatialNavigation.add({
-	        selector: '.focusable'
+			id:'carousel-example-1z',
+	        selector: '#carousel-example-1z .focusable',
 	    });
-
+		SpatialNavigation.add({
+	        selector: '.focusable',
+	    });
+	    SpatialNavigation.add({
+	    	id:'launchItem',
+	        selector: '#launchItem .focusable',
+	    });
+	    SpatialNavigation.add({
+	    	id:'main',
+	        selector: '#main .focusable',
+	    });
+	    SpatialNavigation.add({
+	    	id:'cancelBtn',
+	        selector: '#cancelBtn .focusable',
+	        restrict: 'self-only',
+	        defaultElement:'#cancelBtn'
+	    });
+	 
 		SpatialNavigation.makeFocusable();
 		SpatialNavigation.focus();
 	}
+	
 })
