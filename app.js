@@ -43,19 +43,15 @@ app.config(function($stateProvider,$urlRouterProvider){
 		if(e.which===8){
 			$location.path('/')
 			$('#myModal').modal('hide')
-			SpatialNavigation.clear()
 		} else if(e.which===65){
 			$('#myModal').modal('hide')
 			$location.path('/menu')
 			SpatialNavigation.clear()
-		} else if(e.which===76){
+		} else if(e.which===76 ){
 			$('#myModal').modal('show')
-			if(SpatialNavigation.focus('cancelBtn', true)){
-				console.log("Hello bar bar ")
-			}
-			// SpatialNavigation.focus('carousel-example-1z',false)
-			// SpatialNavigation.focus('main',false)
-			// SpatialNavigation.focus('launchItem',false)
+			$('#myModal').on('shown.bs.modal', function () {
+			  SpatialNavigation.focus('myModal')
+			})
 		} else if(e.which===37){
 			if(SpatialNavigation.focus('carousel-example-1z', true))
 			$('#carousel-example-1z').carousel('prev')
@@ -65,3 +61,36 @@ app.config(function($stateProvider,$urlRouterProvider){
 		}
 	}
 }])
+
+.service('SpatialService', function(){
+	this.startSpatial = function(){
+		SpatialNavigation.init();
+
+		SpatialNavigation.add({
+			id:'carousel-example-1z',
+	        selector: '#carousel-example-1z .focusable',
+	    });
+		SpatialNavigation.add({
+	        selector: '.focusable',
+	    });
+	    SpatialNavigation.add({
+	    	id:'launchItem',
+	        selector: '#launchItem .focusable',
+	    });
+	    SpatialNavigation.add({
+	    	id:'main',
+	        selector: '#main .focusable',
+	        defaultElement:'main',
+	        enterTo:'default-element'
+	    });
+	    SpatialNavigation.add({
+	    	id:'myModal',
+	        selector: '#myModal .focusable',
+	        restrict:'self-only',
+	        defaultElement:'#cancelBtn'
+	    });
+	 
+		SpatialNavigation.makeFocusable();
+		SpatialNavigation.focus('main');
+	}
+})
