@@ -3,10 +3,6 @@ angular.module('myApp.home', [])
 .controller('homeCtrl',['$scope','$http','$location','SpatialService', function($scope,$http,$location,SpatialService){
 
 	console.log("Spatial test");
-	// if($('#myModal').modal('show')===true){
-	// 	SpatialNavigation.clear();
-	// }
-	SpatialService.startSpatial();
 	
 	$scope.showFirst = true;
 	$scope.showFourth = false;

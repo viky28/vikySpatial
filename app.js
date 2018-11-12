@@ -39,25 +39,22 @@ app.config(function($stateProvider,$urlRouterProvider){
 .controller('mainCtrl',['$scope','$location','$rootScope','SpatialService','$timeout', function($scope,$location,$rootScope,SpatialService,$timeout){
 	
 	$scope.keyDown = function(e){
-		console.log('e==',e.which)
-		if(e.which===8){
-			$location.path('/')
-			$('#myModal').modal('hide')
-		} else if(e.which===65){
-			$('#myModal').modal('hide')
-			$location.path('/menu')
-			SpatialNavigation.clear()
-		} else if(e.which===76 ){
-			$('#myModal').modal('show')
+		if(e.which===76){
+			$('#myModal').modal('show');
+
 			$('#myModal').on('shown.bs.modal', function () {
-			  SpatialNavigation.focus('myModal')
+				SpatialNavigation.clear();
+				SpatialService.dialogService();
 			})
-		} else if(e.which===37){
-			if(SpatialNavigation.focus('carousel-example-1z', true))
-			$('#carousel-example-1z').carousel('prev')
-		} else if(e.which===39){
-			if(SpatialNavigation.focus('carousel-example-1z', true))
-			$('#carousel-example-1z').carousel('next')
+		} else if(e.which===8){
+			$location.path('/');
+			$('#myModal').modal('hide');
+			SpatialNavigation.clear();
+		} else if(e.which===65){
+			$location.path('/menu');
+			SpatialNavigation.clear();
+		} else {
+			SpatialService.startSpatial();
 		}
 	}
 }])
@@ -67,22 +64,15 @@ app.config(function($stateProvider,$urlRouterProvider){
 		SpatialNavigation.init();
 
 		SpatialNavigation.add({
-			id:'carousel-example-1z',
-	        selector: '#carousel-example-1z .focusable',
-	    });
-		SpatialNavigation.add({
 	        selector: '.focusable',
 	    });
-	    SpatialNavigation.add({
-	    	id:'launchItem',
-	        selector: '#launchItem .focusable',
-	    });
-	    SpatialNavigation.add({
-	    	id:'main',
-	        selector: '#main .focusable',
-	        defaultElement:'main',
-	        enterTo:'default-element'
-	    });
+	    
+		SpatialNavigation.makeFocusable();
+		SpatialNavigation.focus('main');
+	}
+	this.dialogService = function(){
+		SpatialNavigation.init();
+
 	    SpatialNavigation.add({
 	    	id:'myModal',
 	        selector: '#myModal .focusable',
@@ -91,6 +81,6 @@ app.config(function($stateProvider,$urlRouterProvider){
 	    });
 	 
 		SpatialNavigation.makeFocusable();
-		SpatialNavigation.focus('main');
+		SpatialNavigation.focus('myModal');
 	}
 })
