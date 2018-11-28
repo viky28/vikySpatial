@@ -54,6 +54,7 @@ app.config(function($stateProvider,$urlRouterProvider){
 			$location.path('/menu');
 			SpatialNavigation.clear();
 		} else {
+			SpatialService.startSpatial();
 			if(SpatialNavigation.focus('carousel-example-1z',true)){
 				if(e.which===37){
 					$('#carousel-example-1z').carousel('prev')
@@ -61,7 +62,7 @@ app.config(function($stateProvider,$urlRouterProvider){
 					$('#carousel-example-1z').carousel('next')
 				}
 			}
-			SpatialService.startSpatial();
+			
 		}
 	}
 }])
